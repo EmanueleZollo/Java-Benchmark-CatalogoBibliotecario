@@ -4,7 +4,7 @@ public class Book extends PublicationElement {
     private String author;
     private String genre;
 
-    public Book(long isbn, String title, int  publicationYear, int pagesNum) {
+    public Book(long isbn, String title, int  publicationYear, int pagesNum, String author, String genre) {
         super(isbn, title, publicationYear, pagesNum);
         this.author = author;
         this.genre = genre;
@@ -28,9 +28,7 @@ public class Book extends PublicationElement {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "author='" + author + '\'' +
-                ", genre='" + genre + '\'' +
-                '}';
+        return super.toString() + "author='" + author + '\'' + ", genre='" + genre + '\'' + '}';
+
     }
 }

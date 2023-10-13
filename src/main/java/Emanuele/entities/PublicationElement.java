@@ -51,7 +51,8 @@ public abstract class PublicationElement {
                 "isbn=" + isbn +
                 ", title='" + title + '\'' +
                 ", publicationYear=" + publicationYear +
-                ", pagesNum=" + pagesNum +
-                '}';
+                ", pagesNum=" + pagesNum;
     }
+
+
 }

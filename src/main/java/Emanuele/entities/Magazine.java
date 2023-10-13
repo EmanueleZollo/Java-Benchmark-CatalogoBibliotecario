@@ -4,9 +4,9 @@ public class Magazine extends PublicationElement{
 
     private PublicationFrequency PublicationFrequency;
 
-    public Magazine(long isbn, String title, int publicationYear, int pagesNum, Emanuele.entities.PublicationFrequency publicationFrequency) {
+    public Magazine(long isbn, String title, int publicationYear, int pagesNum, String PublicationFrequency) {
         super(isbn, title, publicationYear, pagesNum);
-        PublicationFrequency = publicationFrequency;
+        this.PublicationFrequency = getPublicationFrequency();
     }
 
     public Emanuele.entities.PublicationFrequency getPublicationFrequency() {
@@ -19,8 +19,6 @@ public class Magazine extends PublicationElement{
 
     @Override
     public String toString() {
-        return "Magazine{" +
-                "PublicationFrequency=" + PublicationFrequency +
-                '}';
+        return super.toString() + ", PublicationFrequency=" + '\'' + PublicationFrequency + '}';
     }
 }
