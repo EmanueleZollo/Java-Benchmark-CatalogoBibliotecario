@@ -26,9 +26,11 @@ public class Book extends PublicationElement {
         this.genre = genre;
     }
 
+
     @Override
     public String toString() {
-        return super.toString() + "author='" + author + '\'' + ", genre='" + genre + '\'' + '}';
+        return "Book {" + super.toString() + "author='" + author +
+                ", genre='" + genre + '\'' + '}';
 
     }
 }

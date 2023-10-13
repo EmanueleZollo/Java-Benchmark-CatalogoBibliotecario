@@ -47,7 +47,7 @@ public abstract class PublicationElement {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "{" +
                 "isbn=" + isbn +
                 ", title='" + title + '\'' +
                 ", publicationYear=" + publicationYear +

@@ -19,6 +19,6 @@ public class Magazine extends PublicationElement{
 
     @Override
     public String toString() {
-        return super.toString() + ", PublicationFrequency=" + '\'' + PublicationFrequency + '}';
+        return "Magazine {" + super.toString() + ", PublicationFrequency=" + '\'' + PublicationFrequency + '}';
     }
 }

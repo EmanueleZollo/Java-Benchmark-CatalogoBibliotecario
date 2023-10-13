@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Supplier;
 
 import Emanuele.entities.Book;
 import Emanuele.entities.Magazine;
@@ -64,17 +65,53 @@ public class Application {
                         System.out.println("Non hai inserito uno tra i due valori richiesti. Riprova");
                 }
 
-                /*CREAZIONE CONTENUTI DENTRO NEWBOOKLIST E NEWMAGAZINELIST - CREAZIONE LISTA CATALOGO*/
-                Collection<Object> catalogue = new ArrayList<>();
+                /*CREAZIONE CONTENUTI DENTRO NEWBOOKLIST E NEWMAGAZINELIST */
+
+        Book book1 = new Book(10001, "Il signore degli anelli", 1969, 1400,"J.R.R. Tolkien", "Fantasy");
+        Book book2 = new Book(10002, "Harry Potter e la pietra filosofale", 1994, 396,"J.K. Rowling", "Fantasy");
+        Book book3 = new Book(10001, "Assassinio sull'Orient Express", 1934, 639,"Agatha Christie", "Crime Novel");
+        Book book4 = new Book(10001, "Don Chisciotte della Mancia", 1476, 930,"J.R.R. Tolkien", "Adventure");
+        Book book5 = new Book(10001, "La profezia dell'Aquila", 2004, 424,"Simon Scarrow", "History Novel");
+        Book book6 = new Book(10001, "Uno studio in rosso", 1842, 390,"Arthur Conan Doyle", "Crime Novel");
+        Book book7 = new Book(10001, "Alexandre", 1999, 1532,"Valerio Massimo Manfredi", "History Novel");
+
+        newBookList.add(book1);
+        newBookList.add(book2);
+        newBookList.add(book3);
+        newBookList.add(book4);
+        newBookList.add(book5);
+        newBookList.add(book6);
+        newBookList.add(book7);
+
+        Magazine magazine1 = new Magazine(2001, "Internazionale", 1965, 70, "Monthly");
+        Magazine magazine2 = new Magazine(2002, "Focus", 1995, 25, "Weekly");
+        Magazine magazine3 = new Magazine(2003, "The Economist", 1935, 90, "Biannual");;
+        Magazine magazine4 = new Magazine(2004, "The New Yorker", 1920, 65, "Monthly");;
+        Magazine magazine5 = new Magazine(2005, "Vogue", 1952, 120, "Monthly");;
+
+        newMagazineList.add(magazine1);
+        newMagazineList.add(magazine2);
+        newMagazineList.add(magazine3);
+        newMagazineList.add(magazine4);
+        newMagazineList.add(magazine5);
+
+
+        /* CREAZIONE LISTA CATALOGO */
+        List<Object> catalogue = new ArrayList<>();
                 catalogue.addAll(newBookList);
                 catalogue.addAll(newMagazineList);
         System.out.println("------------ STAMPO CATALOGO PER PROVA ------------------");
         System.out.println(catalogue);
 
         System.out.println("Vuoi rimuovere un elemento e conosci il suo isbn? Inseriscilo qui:");
-        int isbnToRemove = Integer.parseInt(input.nextLine());
-        catalogue.stream().filter(isbn -> get)
+        int isbnToRemoveElement = Integer.parseInt(input.nextLine());
 
-
-                }
+        Book bookToRemove = newBookList.stream().filter(element -> {
+            return element.getIsbn() == (isbnToRemoveElement);
+        }
+        catalogue.remove(bookToRemove);
+                System.out.println("non c'è alcun elemento con questo isbn");
             }
+        }
+
+
